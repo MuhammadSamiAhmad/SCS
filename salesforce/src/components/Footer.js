@@ -1,29 +1,11 @@
 import React from "react";
+import NewsletterSignup from './NewsletterSignup';
 
 function Footer() {
   return (
     <footer className="bg-black text-white py-4">
-      <div className="container mx-auto text-center">
-        <p>
-          &copy; Copyrights 2024 Sahara Cloud Solutions. All rights reserved.
-        </p>
-      </div>
-    </footer>
-  );
-}
 
-export default Footer;
-
-
-// My code gonna be as a comment
-
-/*
-import React from 'react';
-
-const Footer = () => {
-  return (
-    <footer id="footer" className="bg-gray-900 text-gray-200 pt-10">
-      <div className="footer-top">
+     <div className="footer-top">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap -mx-4">
 
@@ -82,11 +64,10 @@ const Footer = () => {
 
       <div className="container mx-auto px-4 py-4">
         <div className="flex justify-between items-center text-gray-400">
-          <div>
-            &copy; {new Date().getFullYear()} <strong><span>Gp</span></strong>. All Rights Reserved
-          </div>
-          <div>
-            Designed by <a href="https://bootstrapmade.com/" className="text-blue-500 hover:text-white">BootstrapMade</a>
+          <div className="container mx-auto text-center">
+            <p>
+            &copy; Copyrights{new Date().getFullYear()} <strong><span>Gp</span></strong>. All Rights Reserved
+          </p>
           </div>
         </div>
       </div>
@@ -95,4 +76,3 @@ const Footer = () => {
 }
 
 export default Footer;
-*/
