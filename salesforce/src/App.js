@@ -1,43 +1,33 @@
-import { useEffect } from "react";
-//Components
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import HeroBanner from "./components/HeroBanner";
-import About from "./components/About";
-import Services from "./components/Services";
-import Team from "./components/Team";
-import Impact from "./components/Impact";
-import Testimonials from "./components/Testimonials";
+// import About from "./components/About";
+// import Services from "./components/Services";
+// import Cta from "./components/Cta";
+// import Team from "./components/Team";
+// import Testimonials from "./components/Testimonials";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
-//Animation
-import Aos from "aos";
+import React, { useEffect } from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 function App() {
   useEffect(() => {
-    Aos.init({ duration: 1000 });
+    AOS.init({
+      duration: 2000, // You can adjust the animation duration
+    });
   }, []);
-
   return (
     <div>
-      <Navbar />
-      <section id="hero">
-        <HeroBanner />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="services">
-        <Services />
-      </section>
-      <Impact />
-      <section id="team">
-        <Team />
-      </section>
-      <Testimonials />
-      <section id="contact">
-        <Contact />
-      </section>
+      <Header />
+      <HeroBanner />
+      {/* <About /> */}
+      {/* <Services /> */}
+      {/* <Cta />
+      <Team />
+      <Testimonials /> */}
+      <Contact />
       <Footer />
     </div>
   );
