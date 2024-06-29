@@ -15,7 +15,7 @@ export default function Team() {
     },
     {
       img: team2,
-      name: "Sarah Jhonson",
+      name: "Sarah Johnson",
       position: "Product Manager",
       delay: "200",
     },

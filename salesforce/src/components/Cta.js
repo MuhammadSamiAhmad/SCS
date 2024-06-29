@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import CTAbg from "../assets/cta-bg.jpg";
+import { PopupModal } from "react-calendly"; // Import PopupModal from react-calendly
 
 const Cta = () => {
+  const [isOpen, setIsOpen] = useState(false); // State to manage modal open/close
+
   return (
     <div className="contain" style={{ maxWidth: "100%", margin: "auto" }}>
       <section
@@ -18,15 +21,21 @@ const Cta = () => {
               Ready to transform your organization with Salesforce? Contact us
               today to learn more about how we can help you achieve your goals.
             </p>
-            <a
+            <button
               className="cta-btn mt-4 inline-block px-7 py-2 text-white font-semibold text-sm tracking-wider border-2 border-white rounded transition duration-500 hover:bg-blue-500 hover:border-blue-500 hover:text-gray-900"
-              href="#home"
+              onClick={() => setIsOpen(true)}
             >
-              Call To Action
-            </a>
+              Schedule a Call
+            </button>
           </div>
         </div>
       </section>
+      <PopupModal
+        url="https://calendly.com/saharacloudsolutions/30min" // Replace with your Calendly URL
+        onModalClose={() => setIsOpen(false)} // Close modal function
+        open={isOpen} // Modal open state
+        rootElement={document.getElementById("root")} // Specify root element
+      />
     </div>
   );
 };
