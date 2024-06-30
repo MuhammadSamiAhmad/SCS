@@ -19,7 +19,7 @@ function Footer() {
                   Nasr City, Cairo, EGYPT
                   <br />
                   <br />
-                  <strong>Phone:</strong> +2010 6621 5017
+                  <strong>Phone:</strong> +20011 5000 0430
                   <br />
                   <strong>Email:</strong> Info@saharacloudsolutions.com
                   <br />
