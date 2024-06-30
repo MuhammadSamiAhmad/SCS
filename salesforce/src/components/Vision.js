@@ -1,5 +1,5 @@
 import React from "react";
-import AboutImg from "../assets/about.jpg";
+import AboutImg from "../assets/images/About_SCS_9.png.jpg";
 
 const featuresData = [
   {
@@ -25,12 +25,12 @@ const Features = () => {
         <div className="container mx-auto px-4" data-aos="fade-up">
           <div className="flex flex-wrap">
             <div
-              className="image w-full lg:w-1/2 bg-cover bg-center min-h-[400px]"
+              className="image w-full lg:w-1/2 bg-cover bg-center min-h-[400px] rounded-lg"
               style={{ backgroundImage: `url(${AboutImg})` }}
               data-aos="fade-right"
             ></div>
             <div
-              className="w-full lg:w-1/2"
+              className="w-full lg:w-1/2 flex flex-col justify-center"
               data-aos="fade-left"
               data-aos-delay="100"
             >
@@ -41,10 +41,10 @@ const Features = () => {
                   data-aos="zoom-in"
                   data-aos-delay={feature.delay}
                 >
-                  <i
-                    className={`${feature.icon} text-yellow-500 text-6xl float-left`}
-                  ></i>
-                  <h4 className="text-xl font-bold mt-1 ml-16">
+                  <h4
+                    className="text-xl mt-1 ml-16"
+                    style={{ fontFamily: "Righteous" }}
+                  >
                     {feature.title}
                   </h4>
                   <p className="text-base text-gray-500 ml-16">

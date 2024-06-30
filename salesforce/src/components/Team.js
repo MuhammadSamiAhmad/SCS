@@ -1,7 +1,7 @@
 import React from "react";
 
-import team1 from "../assets/team/team-1.jpg";
-import team2 from "../assets/team/team-2.jpg";
+import team1 from "../assets/team/team_scs-2.jpg";
+import team2 from "../assets/team/team_scs-1.jpg";
 import team3 from "../assets/team/team-3.jpg";
 import team4 from "../assets/team/team-4.jpg";
 
@@ -9,14 +9,14 @@ export default function Team() {
   const teamMembers = [
     {
       img: team1,
-      name: "Walter White",
-      position: "Chief Executive Officer",
+      name: "Youssef Gadelrab",
+      position: "Salesforce Developer",
       delay: "100",
     },
     {
       img: team2,
-      name: "Sarah Johnson",
-      position: "Product Manager",
+      name: "Abdelrahman Akmal",
+      position: "Salesforce Business Analyst",
       delay: "200",
     },
     {
@@ -44,7 +44,10 @@ export default function Team() {
               </h2>
               <div className="h-0.5 color bg-blue-500 w-20 ml-3 mt-1"></div>
             </div>
-            <h4 className="text-4xl font-bold uppercase text-gray-900">
+            <h4
+              className="text-4xl font-bold uppercase text-gray-900"
+              style={{ fontFamily: "Righteous" }}
+            >
               MEET OUR TEAM
             </h4>
           </div>

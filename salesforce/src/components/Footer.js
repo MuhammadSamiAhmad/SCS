@@ -1,6 +1,12 @@
 import React from "react";
+import Logo from "../assets/Logos_SCS_W-01.png";
+import { Link } from "react-scroll";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
+import NewsletterForm from "./NewsletterForm";
 
 function Footer() {
+  const MAILCHIMP_URL =
+    "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
   return (
     <footer className="bg-black text-white py-4">
       <div className="footer-top">
@@ -9,7 +15,7 @@ function Footer() {
             <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
               <div className="footer-info">
                 <h3 className="text-2xl font-bold text-white">
-                  Gp<span className="text-yellow-500">.</span>
+                  <img src={Logo} width={100} height={100} alt="Logo" />
                 </h3>
                 <p className="mt-4">
                   Wahran St., branched from Tayaran St., <br />
@@ -34,95 +40,119 @@ function Footer() {
             <div className="w-full md:w-1/2 lg:w-1/6 px-4 mb-8 md:mb-0">
               <h4 className="text-xl font-bold mb-4">Useful Links</h4>
               <ul className="list-none p-0">
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
-                    Home
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
-                    About us
-                  </a>
-                </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
-                    Services
-                  </a>
-                </li>
+                {["Home", "About", "Services", "Team"].map((item) => (
+                  <li key={item} className="mb-2">
+                    <Link
+                      to={item.toLowerCase()}
+                      smooth={true}
+                      duration={500}
+                      offset={-100}
+                      className={`text-gray-400 hover:text-white cursor-pointer`}
+                    >
+                      {item}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </div>
 
             <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
               <h4 className="text-xl font-bold mb-4">Our Services</h4>
               <ul className="list-none p-0">
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Non-Profit Consultation
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Consultation B2B
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Experience Cloud
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Sales Cloud
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Service Cloud
-                  </a>
+                  </Link>
                 </li>
-                <li className="mb-2">
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Declarative Integrations
-                  </a>
+                  </Link>
                 </li>
-                <li>
-                  <i className="bx bx-chevron-right mr-2"></i>
-                  <a href="#home" className="text-gray-400 hover:text-white">
+                <li className="mb-2 cursor-pointer">
+                  {" "}
+                  <Link
+                    to="services"
+                    smooth={true}
+                    duration={500}
+                    offset={-100}
+                    className={`text-gray-400 hover:text-white`}
+                  >
                     Declarative Automations
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
 
-            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
-              <h4 className="text-xl font-bold mb-4">Our Newsletter</h4>
-              <p className="mb-4">
-                Subscribe to keep yourself updated with new features in the
-                Salesforce Ecosystem!
-              </p>
-              <form action="" method="post" className="flex">
-                <input
-                  type="email"
-                  name="email"
-                  className="p-2 w-full text-black"
-                  placeholder="Your Email"
-                />
-                <input
-                  type="submit"
-                  value="Subscribe"
-                  className="p-2 bg-blue-500 text-white cursor-pointer"
-                />
-              </form>
-            </div>
+            <MailchimpSubscribe
+              url={MAILCHIMP_URL}
+              render={(props) => {
+                const { subscribe, status, message } = props || {};
+                return (
+                  <NewsletterForm
+                    status={status}
+                    message={message}
+                    onValidated={(formData) => subscribe(formData)}
+                  />
+                );
+              }}
+            />
           </div>
         </div>
       </div>
@@ -131,11 +161,7 @@ function Footer() {
         <div className="flex justify-between items-center text-gray-400">
           <div className="container mx-auto text-center">
             <p>
-              &copy; Copyrights{new Date().getFullYear()}{" "}
-              <strong>
-                <span>Gp</span>
-              </strong>
-              . All Rights Reserved
+              &copy; Copyrights 2024 Sahara Cloud Solutions. All rights reserved
             </p>
           </div>
         </div>

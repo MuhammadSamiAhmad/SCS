@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-scroll";
 import Logo from "../assets/Logos_SCS_W-01.png";
 
 export default function Navbar() {
-  const [active, setActive] = useState("Home");
-
   return (
     <header id="header" className="fixed w-full z-20 bg-black bg-opacity-70 ">
       <div className="container mx-auto flex justify-between items-center p-4">
@@ -18,10 +16,7 @@ export default function Navbar() {
                   smooth={true}
                   duration={500}
                   offset={-100}
-                  className={`cursor-pointer py-2 px-4 font-semibold text-white transition duration-400  hover:text-blue-500 ${
-                    active === item ? "text-orange-500" : "text-white"
-                  }`}
-                  onClick={() => setActive(item)}
+                  className={`cursor-pointer py-2 px-4 font-semibold text-white transition duration-400  hover:text-blue-500`}
                 >
                   {item}
                 </Link>
@@ -32,7 +27,7 @@ export default function Navbar() {
         <div className="button">
           <a
             href="#team"
-            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300 whitespace-nowrap sm:hidden lg:inline-block"
+            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300 whitespace-nowrap hidden md:inline-block lg:inline-block"
           >
             Get Started
           </a>
