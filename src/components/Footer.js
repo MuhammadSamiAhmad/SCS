@@ -1,12 +1,11 @@
 import React from "react";
 import Logo from "../assets/Logos_SCS_W-01.png";
 import { Link } from "react-scroll";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
+import MailChampForm from "./MailChampForm";
 
 // import NewsletterForm from "./NewsletterForm";
 
 function Footer() {
-  const url = process.env.REACT_APP_MAILCHIMP_URL;
   return (
     <footer className="bg-black text-white py-4">
       <div className="footer-top">
@@ -139,7 +138,7 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <MailchimpSubscribe url={url} />
+            <MailChampForm />
           </div>
         </div>
       </div>
