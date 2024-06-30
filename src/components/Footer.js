@@ -2,11 +2,12 @@ import React from "react";
 import Logo from "../assets/Logos_SCS_W-01.png";
 import { Link } from "react-scroll";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
-import NewsletterForm from "./NewsletterForm";
+// import NewsletterForm from "./NewsletterForm";
 
 function Footer() {
-  const MAILCHIMP_URL =
-    "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
+  // const MAILCHIMP_URL =
+  //   "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
+  const url = "//xxxx.us13.list-manage.com/subscribe/post?u=zefzefzef&id=fnfgn";
   return (
     <footer className="bg-black text-white py-4">
       <div className="footer-top">
@@ -140,7 +141,7 @@ function Footer() {
               </ul>
             </div>
 
-            <MailchimpSubscribe
+            {/* <MailchimpSubscribe
               url={MAILCHIMP_URL}
               render={(props) => {
                 const { subscribe, status, message } = props || {};
@@ -151,8 +152,9 @@ function Footer() {
                     onValidated={(formData) => subscribe(formData)}
                   />
                 );
-              }}
-            />
+              }} */}
+            {/* /> */}
+            <MailchimpSubscribe url={url} />
           </div>
         </div>
       </div>
