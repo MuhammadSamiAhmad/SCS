@@ -4,6 +4,7 @@ import { PopupModal } from "react-calendly"; // Import PopupModal from react-cal
 
 const Cta = () => {
   const [isOpen, setIsOpen] = useState(false); // State to manage modal open/close
+  const calendlyUrl = process.env.REACT_APP_CALENDLY_URL;
 
   return (
     <div className="contain" style={{ maxWidth: "100%", margin: "auto" }}>
@@ -31,7 +32,7 @@ const Cta = () => {
         </div>
       </section>
       <PopupModal
-        url="https://calendly.com/saharacloudsolutions/30min" // Replace with your Calendly URL
+        url={calendlyUrl} // Replace with your Calendly URL
         onModalClose={() => setIsOpen(false)} // Close modal function
         open={isOpen} // Modal open state
         rootElement={document.getElementById("root")} // Specify root element

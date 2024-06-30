@@ -2,6 +2,8 @@ import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
 function Contact() {
+  const googleMapsUrl = process.env.REACT_APP_GOOGLE_MAPS_URL;
+
   return (
     <div className="contain" style={{ maxWidth: "80%", margin: "auto" }}>
       <section
@@ -29,7 +31,7 @@ function Contact() {
             <iframe
               title="Google Maps Location"
               style={{ border: 0, width: "100%", height: "270px" }}
-              src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d863.2816546999263!2d31.327739221933243!3d30.061904855687917!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2seg!4v1719736272104!5m2!1sen!2seg"
+              src={googleMapsUrl}
               allowFullScreen
             ></iframe>
           </div>
