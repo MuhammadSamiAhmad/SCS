@@ -23,7 +23,10 @@ function Footer() {
                   <br />
                   <strong>Email:</strong> Info@saharacloudsolutions.com
                   <br />
-                  Meetus@saharacloudsolutions.com
+                  <span className="ml-12">
+                    {" "}
+                    Meetus@saharacloudsolutions.com
+                  </span>
                   <br />
                 </p>
                 <div className="social-links mt-3">
