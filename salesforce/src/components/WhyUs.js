@@ -1,7 +1,6 @@
 import React from "react";
 
 import AboutImg from "../assets/images/About_SCS_1.jpg";
-import Einstein from "../assets/EINSTEIN_Coat_Point2HeadRight_SFS20_sRGB.png";
 
 const featuresData = [
   {
