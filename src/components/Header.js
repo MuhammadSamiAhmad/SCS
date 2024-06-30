@@ -5,8 +5,14 @@ import Logo from "../assets/Logos_SCS_W-01.png";
 export default function Navbar() {
   return (
     <header id="header" className="fixed w-full z-20 bg-black bg-opacity-70 ">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <img src={Logo} width={100} height={100} alt="Logo" />
+      <div className="container mx-auto flex justify-between items-center">
+        <img
+          src={Logo}
+          width={90}
+          height={90}
+          alt="Logo"
+          // className="size-1/12"
+        />
         <nav className="flex">
           <ul className="flex space-x-4 flex-wrap">
             {["Home", "About", "Services", "Team", "Contact"].map((item) => (
@@ -27,7 +33,7 @@ export default function Navbar() {
         <div className="button">
           <a
             href="#team"
-            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300 whitespace-nowrap hidden md:inline-block lg:inline-block"
+            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300 whitespace-nowrap hidden md:inline-block lg:inline-block mr-7"
           >
             Get Started
           </a>

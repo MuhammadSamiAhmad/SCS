@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
 
-const url = process.env.REACT_APP_MAILCHIMP_URL;
+const url =
+  "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
 
 const SimpleForm = ({ onSubmitted }) => {
   const [email, setEmail] = useState("");

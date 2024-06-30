@@ -3,8 +3,6 @@ import Logo from "../assets/Logos_SCS_W-01.png";
 import { Link } from "react-scroll";
 import MailChampForm from "./MailChampForm";
 
-// import NewsletterForm from "./NewsletterForm";
-
 function Footer() {
   return (
     <footer className="bg-black text-white py-4">
