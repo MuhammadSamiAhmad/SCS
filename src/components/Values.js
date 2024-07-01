@@ -35,7 +35,7 @@ const Values = () => {
             <img
               src={ValuesImg}
               className="w-full lg:w-5/12 rounded-lg shadow-2xl"
-              alt="Mission Img"
+              alt="Values Img"
             />
             <div
               className="w-full lg:w-1/2 flex flex-col justify-center"

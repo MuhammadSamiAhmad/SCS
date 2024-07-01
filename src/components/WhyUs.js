@@ -48,7 +48,7 @@ export default function WhyUs() {
             <img
               src={AboutImg}
               className="w-full lg:w-5/12 rounded-lg shadow-2xl"
-              alt="Mission Img"
+              alt="WhyUs Img"
             />
             <div
               className="w-full lg:w-1/2 flex flex-col justify-center"
