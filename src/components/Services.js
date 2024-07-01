@@ -102,7 +102,7 @@ const Services = () => {
                       {service.icon}
                     </div>
                   </div>
-                  <div className="text-xl  mb-2">
+                  <div className="text-xl mb-2">
                     <h1
                       href="#home"
                       className="text-gray-900 transition-all duration-300"
