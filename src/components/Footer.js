@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../assets/Logos_SCS_W-01.png";
 import { Link } from "react-scroll";
-import MailChampForm from "./MailChampForm";
+import CustomForm from "./MailChampForm";
 
 function Footer() {
   return (
@@ -126,7 +126,6 @@ function Footer() {
                   </Link>
                 </li>
                 <li className="mb-2 cursor-pointer">
-                  {" "}
                   <Link
                     to="services"
                     smooth={true}
@@ -139,7 +138,9 @@ function Footer() {
                 </li>
               </ul>
             </div>
-            <MailChampForm />
+            <div className="w-full md:w-1/2 lg:w-1/4 px-4 mb-8 md:mb-0">
+              <CustomForm />
+            </div>
           </div>
         </div>
       </div>

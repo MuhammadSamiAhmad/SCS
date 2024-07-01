@@ -17,21 +17,18 @@ const SimpleForm = ({ onSubmitted }) => {
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="flex flex-col items-center space-y-4"
-    >
+    <form onSubmit={handleSubmit} className="flex items-center">
       <input
         type="email"
         placeholder="Your email"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="p-2 border border-gray-300 rounded w-64 text-gray-950"
+        className="p-2 border border-gray-300 rounded-l w-64 text-gray-950 h-10"
         required
       />
       <button
         type="submit"
-        className="bg-blue-600 text-white hover:text-gray-800 px-6 py-2 rounded hover:bg-blue-600 transition-colors duration-300 border-blue-500"
+        className="bg-blue-600 text-white hover:text-gray-800 px-6 py-2 rounded-r hover:bg-blue-600 transition-colors duration-300 border-blue-500 h-10"
       >
         Subscribe
       </button>
@@ -44,7 +41,10 @@ const CustomForm = () => (
     url={url}
     render={({ subscribe, status, message }) => (
       <div className="text-center">
-        <h4 className="text-2xl font-bold mb-4">Our Newsletter</h4>
+        <h4 className="text-xl font-bold mb-4">Our Newsletter</h4>
+        <p className="mb-4">
+          Discover the latest news and innovations from Sahara Cloud Solutions!
+        </p>
         <SimpleForm onSubmitted={(formData) => subscribe(formData)} />
         {status === "sending" && (
           <div style={{ color: "blue" }}>sending...</div>
@@ -56,7 +56,7 @@ const CustomForm = () => (
           />
         )}
         {status === "success" && (
-          <div style={{ color: "green" }}>Subscribed !</div>
+          <div style={{ color: "green" }}>Subscribed!</div>
         )}
       </div>
     )}
