@@ -12,7 +12,13 @@ export default function Navbar() {
   return (
     <header id="header" className="fixed w-full z-20 bg-black bg-opacity-70">
       <div className="container mx-auto flex justify-between items-center px-4">
-        <img src={Logo} width={90} height={90} alt="Logo" />
+        <img
+          src={Logo}
+          width={90}
+          height={90}
+          alt="Logo"
+          className="m-2 md:m-0 lg:m-0"
+        />
         <nav
           className={`${
             isMobileMenuOpen ? "block" : "hidden"
