@@ -16,7 +16,7 @@ export default function HeroBanner() {
         style={{ paddingTop: "74px", textAlign: "center" }}
       >
         <div>
-          <h1 className="text-white  lg:text-7xl font-bold mt-15 lg:mt-30 font-poppins">
+          <h1 className="text-white text-5xl lg:text-7xl font-bold mt-15 lg:mt-30 font-poppins">
             Sahara Cloud Solutions
           </h1>
           <h2 className="text-white text-xl lg:text-5xl mt-4 lg:mt-2">

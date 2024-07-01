@@ -7,9 +7,12 @@ const Cta = () => {
   // const calendlyUrl = process.env.REACT_APP_CALENDLY_URL;
 
   return (
-    <div className="contain" style={{ maxWidth: "100%", margin: "auto" }}>
+    <div
+      id="cta"
+      className="contain"
+      style={{ maxWidth: "100%", margin: "auto" }}
+    >
       <section
-        id="cta"
         className="cta bg-cover bg-center bg-fixed py-16"
         style={{
           backgroundImage: `linear-gradient(rgba(2, 2, 2, 0.5), rgba(0, 0, 0, 0.5)), url(${CTAbg})`,

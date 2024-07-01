@@ -35,12 +35,15 @@ export default function Navbar() {
           </ul>
         </nav>
         <div>
-          <a
-            href="#team"
-            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300"
+          <Link
+            smooth={true}
+            duration={500}
+            offset={-100}
+            to="cta"
+            className="bg-transparent hover:bg-blue-500 text-white hover:text-gray-800 border-2 border-blue-500 rounded-md py-2 px-6 text-sm transition duration-300 focus:bg-transparent focus:text-white cursor-pointer"
           >
             Get Started
-          </a>
+          </Link>
         </div>
         <button
           onClick={toggleMobileMenu}
