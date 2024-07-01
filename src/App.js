@@ -23,8 +23,7 @@ function App() {
     });
   }, []);
   return (
-    <div className="w-full">
-      <div style={{ width: "60%" }}></div>
+    <>
       <Header />
       <HeroBanner />
       <About />
@@ -38,7 +37,7 @@ function App() {
       {/* <Testimonials /> */}
       <Contact />
       <Footer />
-    </div>
+    </>
   );
 }
 

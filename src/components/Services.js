@@ -102,7 +102,7 @@ const Services = () => {
                       {service.icon}
                     </div>
                   </div>
-                  <h4 className="text-xl  mb-2">
+                  <div className="text-xl  mb-2">
                     <h1
                       href="#home"
                       className="text-gray-900 transition-all duration-300"
@@ -110,7 +110,7 @@ const Services = () => {
                     >
                       {service.title}
                     </h1>
-                  </h4>
+                  </div>
                   <p className="text-sm text-gray-600">{service.description}</p>
                 </div>
               </div>
