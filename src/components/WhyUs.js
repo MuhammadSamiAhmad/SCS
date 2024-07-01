@@ -4,25 +4,21 @@ import AboutImg from "../assets/images/About_SCS_1.jpg";
 
 const featuresData = [
   {
-    icon: "bx bx-receipt",
     title: "Expertise",
     description: "Extensive experience in Salesforce solutions.",
     delay: 150,
   },
   {
-    icon: "bx bx-cube-alt",
     title: "Customized Solutions",
     description: "Tailored services to meet your specific needs.",
     delay: 150,
   },
   {
-    icon: "bx bx-images",
     title: "Commitment to Non-Profits",
     description: "A strong focus on supporting non-profit organizations.",
     delay: 150,
   },
   {
-    icon: "bx bx-shield",
     title: "Proven Track Record",
     description: "Numerous satisfied clients and successful projects",
     delay: 150,
@@ -32,7 +28,7 @@ const featuresData = [
 export default function WhyUs() {
   return (
     <div className="contain" style={{ maxWidth: "80%", margin: "auto" }}>
-      <section id="features" className="features pt-5">
+      <section id="whyUs" className="whyUs pt-5">
         <div className="container mx-auto px-4" data-aos="fade-up">
           <div className="section-title mb-7" data-aos="fade-right">
             <div className="flex flex-row items-center mt-3">
@@ -48,12 +44,12 @@ export default function WhyUs() {
               REASONS TO CHOOSE US
             </h4>
           </div>
-          <div className="flex flex-wrap">
-            <div
-              className="image w-full lg:w-1/2 bg-cover bg-center min-h-[400px] rounded-lg"
-              style={{ backgroundImage: `url(${AboutImg})` }}
-              data-aos="fade-right"
-            ></div>
+          <div className="flex flex-wrap flex-row items-center justify-between">
+            <img
+              src={AboutImg}
+              className="w-full lg:w-5/12 rounded-lg shadow-2xl"
+              alt="Mission Img"
+            />
             <div
               className="w-full lg:w-1/2 flex flex-col justify-center"
               data-aos="fade-left"
@@ -62,20 +58,16 @@ export default function WhyUs() {
               {featuresData.map((feature, index) => (
                 <div
                   key={index}
-                  className="icon-box mt-5"
                   data-aos="zoom-in"
                   data-aos-delay={feature.delay}
                 >
-                  <i
-                    className={`${feature.icon} text-yellow-500 text-6xl float-left`}
-                  ></i>
                   <h4
-                    className="text-xl mt-1 ml-16"
+                    className="text-xl mt-5"
                     style={{ fontFamily: "Righteous" }}
                   >
                     {feature.title}
                   </h4>
-                  <p className="text-base text-gray-500 ml-16">
+                  <p className="text-base text-gray-500">
                     {feature.description}
                   </p>
                 </div>
