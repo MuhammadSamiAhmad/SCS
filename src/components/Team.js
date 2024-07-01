@@ -1,9 +1,9 @@
 import React from "react";
 
-import team1 from "../assets/team/team_scs-2.jpg";
-import team2 from "../assets/team/team_scs-1.jpg";
-import team3 from "../assets/team/team-3.jpg";
-import team4 from "../assets/team/team-4.jpg";
+import team1 from "../assets/team/Youssef_Gadelrab.jpg";
+import team2 from "../assets/team/Abdelrahman_Akmal.jpg";
+import team3 from "../assets/team/Emad_Ezzo.jpg";
+import team4 from "../assets/team/Mohamed_Medhat.jpg";
 
 export default function Team() {
   const teamMembers = [
@@ -21,14 +21,14 @@ export default function Team() {
     },
     {
       img: team3,
-      name: "William Anderson",
-      position: "CTO",
+      name: "Emad Ezzo",
+      position: "Salesforce Consultant",
       delay: "300",
     },
     {
       img: team4,
-      name: "Amanda Jepson",
-      position: "Accountant",
+      name: "Mohamed Medhat",
+      position: "Project Manager",
       delay: "400",
     },
   ];
