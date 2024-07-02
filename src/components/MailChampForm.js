@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import MailchimpSubscribe from "react-mailchimp-subscribe";
+import { db } from "../firebaseConfig"; // Assuming firebase.js exports `db`
 
 const url =
   "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
@@ -13,6 +14,21 @@ const SimpleForm = ({ onSubmitted }) => {
       onSubmitted({
         EMAIL: email,
       });
+
+      // Save email to Firebase
+      saveEmailToFirebase(email);
+    }
+  };
+
+  const saveEmailToFirebase = (email) => {
+    try {
+      // Assuming you have a 'subscribers' collection in Firestore
+      db.ref("subscribers").push({
+        email: email,
+        subscribedAt: new Date().toISOString(),
+      });
+    } catch (error) {
+      console.error("Error saving email to Firebase:", error);
     }
   };
 

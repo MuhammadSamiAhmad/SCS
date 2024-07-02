@@ -1,8 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
-
+import { getDatabase, ref, push } from "firebase/database";
+import { app } from "../firebaseConfig"; 
 function Contact() {
-  // const googleMapsUrl = process.env.REACT_APP_GOOGLE_MAPS_URL;
+  const db = getDatabase(app);
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setStatus("loading");
+    const contactRef = ref(db, "contacts");
+    push(contactRef, formData)
+      .then(() => {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      })
+      .catch((error) => {
+        console.error("Error posting data: ", error);
+        setStatus("error");
+      });
+  };
 
   return (
     <div className="contain" style={{ maxWidth: "80%", margin: "auto" }}>
@@ -66,15 +95,13 @@ function Contact() {
               </div>
             </div>
             <div className="lg:col-span-2 mt-5 lg:mt-0">
-              <form
-                action="forms/contact.php"
-                method="post"
-                className="space-y-4"
-              >
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <input
                     type="text"
                     name="name"
+                    value={formData.name}
+                    onChange={handleChange}
                     className="form-control w-full p-2 border border-gray-300 rounded"
                     placeholder="Your Name"
                     required
@@ -82,6 +109,8 @@ function Contact() {
                   <input
                     type="email"
                     name="email"
+                    value={formData.email}
+                    onChange={handleChange}
                     className="form-control w-full p-2 border border-gray-300 rounded"
                     placeholder="Your Email"
                     required
@@ -90,25 +119,35 @@ function Contact() {
                 <input
                   type="text"
                   name="subject"
+                  value={formData.subject}
+                  onChange={handleChange}
                   className="form-control w-full p-2 border border-gray-300 rounded"
                   placeholder="Subject"
                   required
                 />
                 <textarea
                   name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   rows="5"
                   className="form-control w-full p-2 border border-gray-300 rounded"
                   placeholder="Message"
                   required
                 ></textarea>
                 <div className="my-3">
-                  <div className="loading hidden text-center py-2">Loading</div>
-                  <div className="error-message hidden text-center py-2 bg-red-600 text-white">
-                    An error occurred
-                  </div>
-                  <div className="sent-message hidden text-center py-2 bg-green-600 text-white">
-                    Your message has been sent. Thank you!
-                  </div>
+                  {status === "loading" && (
+                    <div className="loading text-center py-2">Loading...</div>
+                  )}
+                  {status === "error" && (
+                    <div className="error-message text-center py-2 bg-red-600 text-white">
+                      An error occurred
+                    </div>
+                  )}
+                  {status === "success" && (
+                    <div className="sent-message text-center py-2 bg-green-600 text-white">
+                      Your message has been sent. Thank you!
+                    </div>
+                  )}
                 </div>
                 <div className="text-center">
                   <button
