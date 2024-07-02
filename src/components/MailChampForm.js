@@ -1,82 +1,10 @@
-import React, { useState } from "react";
-import MailchimpSubscribe from "react-mailchimp-subscribe";
-import { db } from "../firebaseConfig"; // Assuming firebase.js exports `db`
-
-const url =
-  "https://saharacloudsolutions.us14.list-manage.com/subscribe/post?u=2e438cf31587ada9ec1bcb98f&amp;id=6d8f994041&amp;f_id=00d628e1f0";
-
-const SimpleForm = ({ onSubmitted }) => {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (email && email.indexOf("@") > -1) {
-      onSubmitted({
-        EMAIL: email,
-      });
-
-      // Save email to Firebase
-      saveEmailToFirebase(email);
-    }
-  };
-
-  const saveEmailToFirebase = (email) => {
-    try {
-      // Assuming you have a 'subscribers' collection in Firestore
-      db.ref("subscribers").push({
-        email: email,
-        subscribedAt: new Date().toISOString(),
-      });
-    } catch (error) {
-      console.error("Error saving email to Firebase:", error);
-    }
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="flex items-center">
-      <input
-        type="email"
-        placeholder="Your email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-        className="p-2 border border-gray-300 rounded-l w-64 text-gray-950 h-10"
-        required
-      />
-      <button
-        type="submit"
-        className="bg-blue-600 text-white hover:text-gray-800 px-6 py-2 rounded-r hover:bg-blue-600 transition-colors duration-300 border-blue-500 h-10"
-      >
-        Subscribe
-      </button>
-    </form>
-  );
-};
+import React from "react";
+import SimpleForm from "./SimpleForm";
 
 const CustomForm = () => (
-  <MailchimpSubscribe
-    url={url}
-    render={({ subscribe, status, message }) => (
-      <div className="text-center">
-        <h4 className="text-xl font-bold mb-4">Our Newsletter</h4>
-        <p className="mb-4">
-          Discover the latest news and innovations from Sahara Cloud Solutions!
-        </p>
-        <SimpleForm onSubmitted={(formData) => subscribe(formData)} />
-        {status === "sending" && (
-          <div style={{ color: "blue" }}>sending...</div>
-        )}
-        {status === "error" && (
-          <div
-            style={{ color: "red" }}
-            dangerouslySetInnerHTML={{ __html: message }}
-          />
-        )}
-        {status === "success" && (
-          <div style={{ color: "green" }}>Subscribed!</div>
-        )}
-      </div>
-    )}
-  />
+  <div className="text-center">
+    <SimpleForm />
+  </div>
 );
 
 export default CustomForm;
