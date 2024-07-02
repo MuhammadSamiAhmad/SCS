@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import { getDatabase, ref, push } from "firebase/database";
 import { app } from "../firebaseConfig"; 
+
 function Contact() {
   const db = getDatabase(app);
 
@@ -26,10 +27,16 @@ function Contact() {
       .then(() => {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => {
+          setStatus("");
+        }, 3000); // Clear the message after 3 seconds
       })
       .catch((error) => {
         console.error("Error posting data: ", error);
         setStatus("error");
+        setTimeout(() => {
+          setStatus("");
+        }, 3000); // Clear the error message after 3 seconds
       });
   };
 
