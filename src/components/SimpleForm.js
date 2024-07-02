@@ -25,7 +25,7 @@ const SimpleForm = () => {
       } catch (error) {
         console.error("Error saving email to Firebase:", error);
         setStatus("error");
-        setErrorMessage(error.message);
+        setErrorMessage("error occurred, please try again.");
         setTimeout(() => {
           setStatus("");
           setErrorMessage("");
